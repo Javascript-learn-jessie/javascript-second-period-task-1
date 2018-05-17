@@ -30,6 +30,9 @@ module.exports = class klass {
         return `Class ${this.number}`;
     }
     isIn(student) {
+        if (student.klass.number==this.number) {
+            return true;
+        }
         return false;
     }
     registerJoinListener(teacher){

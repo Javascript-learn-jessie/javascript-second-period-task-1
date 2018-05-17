@@ -19,7 +19,12 @@ module.exports = class Teacher extends Person {
         }
     }
     isTeaching(student) {
-        return true;
+        var isTeach=false;
+        for(let klass of this.klasses){
+            isTeach = klass.isIn(student);
+            if(isTeach) return isTeach;
+        }
+        return isTeach;
     }
 }
 

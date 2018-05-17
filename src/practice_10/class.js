@@ -5,20 +5,23 @@ module.exports = class klass {
         this.number = number;
     }
     assignLeader(student) {
-        if (student.klass.number == this.number){
+        if (student.klass.number == this.number) {
             //判断是否是该班的学生
             this.leader = student;
-        }else{
+        } else {
             console.log("It is not one of us.");
         }
     }
-    appendMember(student){
+    appendMember(student) {
         student.klass = this;
     }
     getDisplayName() {
         return `Class ${this.number}`;
     }
-    isIn(student){
+    isIn(student) {
+        if (student.klass.number==this.number) {
+            return true;
+        }
         return false;
     }
 }
